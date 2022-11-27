@@ -9,7 +9,7 @@ api = Blueprint('api',__name__, url_prefix='/api')
 def getdata():
     return {'foo': 'bar'}
 
-# !COPIED FROM PHONEBOOK APP -- MUST CHANGE, THIS IS FOR REFERENCE ONLY
+
 
 @api.route('/cars', methods = ['POST'])
 @token_required
