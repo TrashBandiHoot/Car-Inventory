@@ -1,0 +1,12 @@
+body {
+    padding-top: 50px;
+}
+
+.log {
+    position: relative;
+    padding-top: 15%;
+}
+
+.log-border {
+    border: 2px solid white;
+}
