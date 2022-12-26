@@ -60,7 +60,7 @@ class Car(db.Model):
     price = db.Column(db.Numeric(precision = 10, scale = 2))
     zero_to_sixty = db.Column(db.String(150))
     top_speed = db.Column(db.String(150))
-    gas = db.Column(db.Boolean, default = True)
+    gas = db.Column(db.String, default = True)
     user_token = db.Column(db.String, db.ForeignKey('user.token'), nullable = False)
 
     def __init__(self,year,brand,model,price,zero_to_sixty,top_speed,gas,user_token, id = ''):
