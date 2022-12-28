@@ -58,20 +58,14 @@ class Car(db.Model):
     brand = db.Column(db.String(150), nullable = False)
     model = db.Column(db.String(150), nullable = False)
     price = db.Column(db.Numeric(precision = 10, scale = 2))
-    zero_to_sixty = db.Column(db.String(150))
-    top_speed = db.Column(db.String(150))
-    gas = db.Column(db.String, default = True)
     user_token = db.Column(db.String, db.ForeignKey('user.token'), nullable = False)
 
-    def __init__(self,year,brand,model,price,zero_to_sixty,top_speed,gas,user_token, id = ''):
+    def __init__(self,year,brand,model,price,user_token, id = ''):
         self.id = self.set_id()
         self.year = year
         self.brand = brand
         self.model = model
         self.price = price
-        self.zero_to_sixty = zero_to_sixty
-        self.top_speed = top_speed
-        self.gas = gas
         self.user_token = user_token
 
 
@@ -83,7 +77,7 @@ class Car(db.Model):
 
 class CarSchema(ma.Schema):
     class Meta:
-        fields = ['id', 'year','brand','model', 'price', 'zero_to_sixy', 'top_speed', 'gas']
+        fields = ['id', 'year','brand','model', 'price']
 
 car_schema = CarSchema()
 cars_schema = CarSchema(many=True)
